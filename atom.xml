@@ -6,7 +6,7 @@
   <link href="https://suerta.github.io/atom.xml" rel="self"/>
   
   <link href="https://suerta.github.io/"/>
-  <updated>2021-07-05T02:25:42.388Z</updated>
+  <updated>2021-06-29T08:14:20.872Z</updated>
   <id>https://suerta.github.io/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://suerta.github.io/2021/07/05/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>https://suerta.github.io/2021/07/05/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</id>
-    <published>2021-07-05T02:09:21.280Z</published>
-    <updated>2021-07-05T02:25:42.388Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>title:Linux基础知识<br>tags:Linux<br>date:”2020/12/01”</p><hr><p>写在前面：做个测试</p><h3 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h3>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;title:Linux基础知识&lt;br&gt;tags:Linux&lt;br&gt;date:”2020/12/01”&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;写在前面：做个测试&lt;/p&gt;
-&lt;h3 id=&quot;linux文件系统&quot;&gt;&lt;a href=&quot;#linux文件系统&quot; class=&quot;headerli</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Linux命令之压缩命令</title>
@@ -137,6 +113,29 @@
     
     
     <category term="杂谈" scheme="https://suerta.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux基础知识</title>
+    <link href="https://suerta.github.io/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>https://suerta.github.io/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</id>
+    <published>2020-11-30T16:00:00.000Z</published>
+    <updated>2021-07-05T02:54:18.289Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在前面：做个测试</p><h3 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写在前面：做个测试&lt;/p&gt;
+&lt;h3 id=&quot;linux文件系统&quot;&gt;&lt;a href=&quot;#linux文件系统&quot; class=&quot;headerlink&quot; title=&quot;linux文件系统&quot;&gt;&lt;/a&gt;linux文件系统&lt;/h3&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://suerta.github.io/tags/Linux/"/>
     
   </entry>
   
