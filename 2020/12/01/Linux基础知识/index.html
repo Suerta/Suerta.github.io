@@ -1,5 +1,151 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人博客，记录学习技术的过程以及心得，不时记录阶段感悟。"><meta name="keywords" content="suerta"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.5"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.5"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.5"><title>Linux基础知识 | 此日无事</title><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基础知识</h1><a id="logo" href="/.">此日无事</a><p class="description">我与往事归于尽，来年依旧迎花开。</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基础知识</h1><div class="post-meta"><a href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#comments" class="comment-count"></a><p><span class="date">2020/12/01</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>写在前面：做个测试</p>
-<h3 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h3></div><div class="post-copyright"><blockquote><p>原文作者: 环王环王环王</p><p>原文链接: <a href="https://suerta.github.io/2020/12/01/Linux基础知识/">https://suerta.github.io/2020/12/01/Linux基础知识/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2021/03/11/hello-world/" class="pre">Hello World</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.5"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.5"></script><script>var gitalk = new Gitalk({
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人博客，记录学习技术的过程以及心得，不时记录阶段感悟。"><meta name="keywords" content="suerta"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.5"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.5"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.5"><title>Linux基础知识 | 此日无事</title><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基础知识</h1><a id="logo" href="/.">此日无事</a><p class="description">我与往事归于尽，来年依旧迎花开。</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基础知识</h1><div class="post-meta"><a href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#comments" class="comment-count"></a><p><span class="date">2020/12/01</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>写在前面：</p>
+<p>本次学习基于centOS7版本的！基于java的全栈开发！</p>
+<p>1.认识Linux</p>
+<p>2.基本的命令（重点：Git讲了一些基本的命令（文件操作、目录管理、文件属性、vim编辑器、磁盘管理…….））</p>
+<p>2、软件的安装和部署（比如：java、tomcat、docker）</p>
+<h4 id="安装yum"><a href="#安装yum" class="headerlink" title="安装yum"></a>安装yum</h4><p><strong>yum是什么？</strong></p>
+<p>yum（ Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 SUSE 中的 Shell 前端软件包管理器。</p>
+<p>基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
+<p>yum 提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<h4 id="安装CentOS（在本地安装）"><a href="#安装CentOS（在本地安装）" class="headerlink" title="安装CentOS（在本地安装）"></a>安装CentOS（在本地安装）</h4><p>Linux是一个操作系统，也可以安装成双系统，于是就使用虚拟机（VMWare）</p>
+<p>虚拟机（VMWare下载（官网）：<a target="_blank" rel="noopener" href="https://www.vmware.com/cn.html%EF%BC%89">https://www.vmware.com/cn.html）</a></p>
+<h2 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h2><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin：</td>
+<td>是系统的一些指令。bin为binary的简写，主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、kill、ls、mkdir、more、mount、rm、su、tar等。</td>
+</tr>
+<tr>
+<td>/sbin：</td>
+<td>一般是指超级用户指令。主要放置一些系统管理的必备程式例如:cfdisk、dhcpcd、dump、e2fsck、fdisk、halt、ifconfig、ifup、 ifdown、init、insmod、lilo、lsmod、mke2fs、modprobe、quotacheck、reboot、rmmod、 runlevel、shutdown等。</td>
+</tr>
+<tr>
+<td>/usr：</td>
+<td></td>
+</tr>
+<tr>
+<td>/usr/bin：</td>
+<td>是后期安装的一些软件的运行脚本。主要放置一些应用软体工具的必备执行档例如c++、g++、gcc、chdrv、diff、dig、du、eject、elm、free、gnome<em>、 gzip、htpasswd、kfm、ktop、last、less、locale、m4、make、man、mcopy、ncftp、 newaliases、nslookup passwd、quota、smb</em>、wget等。</td>
+</tr>
+<tr>
+<td>/usr/sbin：</td>
+<td>放置一些用户安装的系统管理的必备程式例如:dhcpd、httpd、imap、in.*d、inetd、lpd、named、netconfig、nmbd、samba、sendmail、squid、swap、tcpd、tcpdump等。</td>
+</tr>
+<tr>
+<td>/dev：</td>
+<td>任何设备均以文件形式存在于该文件夹内(通过mount命令挂载成用户直接可用的文件系统)</td>
+</tr>
+<tr>
+<td>/media：</td>
+<td>挂载的可移动设备</td>
+</tr>
+<tr>
+<td>/etc：</td>
+<td>配置文件所在目录</td>
+</tr>
+<tr>
+<td>/proc：</td>
+<td>是一种内核和内核模块用来向进程(process) 发送信息的机制(所以叫做/proc)。这个伪文件系统让你可以和内核内部数据结构进行交互，获取 有关进程的有用信息，在运行中(on the fly) 改变设置(通过改变内核参数)。 与其他文件系统不同，/proc 存在于内存之中而不是硬盘上。</td>
+</tr>
+<tr>
+<td>/tmp：</td>
+<td>临时文件，关机时自动销毁</td>
+</tr>
+<tr>
+<td>/var：</td>
+<td>系统产生的不可自动销毁的缓存文件、日志记录。（系统和程序运行后产生的数据、不对外提供服务、只能用户手动清理）（包括mail、数据库文件、日志文件）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>关机</p>
+</blockquote>
+<p>在Linux的领域里关机是很少见的，除非迫不得已，一般情况不会关机。</p>
+<p>关机命令：shutdown</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sync #将数据由内存同步到硬盘</span><br><span class="line">shutdown #关机命令，你可以用man shutdown来看一下帮助文档。例如你可以用以下命令进行关机。</span><br><span class="line">shutdown -h 10 #在十分钟后进行关机</span><br><span class="line">shutdown -h now #立马关机</span><br><span class="line">shutdown -h 20:00 #将在20:00进行关机</span><br><span class="line">shutdown -r now #立马重启</span><br><span class="line">reboot #重启的意思，等同于shutdown -r now</span><br><span class="line">halt #等同于 shutdown -h now</span><br></pre></td></tr></table></figure>
+<p>总结：无论关机还是重启，都要先进行备份。即，执行sync命令。</p>
+<p>在Linux中我们可以使用 ll 或 ls -l 命令来显示一个文件的属性以及文件的所属的用户和组。</p>
+<p>实例中，boot文件的第一个属性用”d”标识。</p>
+<ul>
+<li>当为[ d ]则是一个目录</li>
+<li>当是[ - ]则是一个文件；</li>
+<li>若是[ l ]则表示为链接文档(link file)</li>
+<li>若是[ b ]则表示为装置文件里面的可供存储的接口设备(可随机存取装置)</li>
+<li>若为[ c ]则表示为装置文件里面的串行端口设备，例如键盘，鼠标(一次性读取设备)。</li>
+</ul>
+<p><img src="F:\OneDrive\桌面\人社\学习\Linux命令的学习\ll.png" alt="ll"></p>
+<p>以上的字符中，除去第一个字符后，以三个为一组，均为[rwx]的三个参数的组合。其中[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(excute).要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现[ - ]符号。</p>
+<p>每个文件的属性由左边第一部分的10个字符来确定，第一个字符标识文件类型【0】,第一组三个字符标识属主权限【1 2 3】，第二组三个字符标识属组权限【4 5 6】，第三组三个字符标识其他用户权限【7 8 9】。</p>
+<h2 id="Linux的账号管理学习"><a href="#Linux的账号管理学习" class="headerlink" title="Linux的账号管理学习"></a>Linux的账号管理学习</h2><p> 实现用户账号的管理，要完成的工作主要有以下几个方面。</p>
+<ul>
+<li>用户账号的添加、删除和修改。</li>
+<li>用户口令的管理。</li>
+<li>用户组的管理。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd #添加用户</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-m</td>
+<td>自动创建这个用户的主目录 /home/用户名</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>comment 指一段注解性描述</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>指定用户所属的用户组</td>
+</tr>
+<tr>
+<td>-G</td>
+<td>指定用户所属的附加组</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>指定用户登录shell</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>指定用户的用户号</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>指定用户主目录 如果该目录不存在，则同时使用-m选项创建主目录</td>
+</tr>
+</tbody></table>
+<h3 id="拓展：Linux-链接的概念"><a href="#拓展：Linux-链接的概念" class="headerlink" title="拓展：Linux 链接的概念"></a>拓展：Linux 链接的概念</h3><p>F1是源文件，F2是F1的硬链接，F3是F1的软链接</p>
+<p>硬链接：删除F2对F1没有影响，删除F1对F2也没什么影响。相当于同步数据，各自存在。硬链接是占内存的。相当于是允许一个文件具有多个路径，用户可以通过这种机制建立硬链接到一些重要文件上，防止误删。</p>
+<p>软链接：即快捷方式，删除F3对F1没有什么影响，但是删除F1，F3就找不到对应的路径，如下图。但是当我重新创建一个名为F1的文件，F3又可以用了。</p>
+<p><img src="F:\OneDrive\桌面\人社\学习\Linux命令的学习\软链接.png" alt="软链接"></p>
+<p>创建链接使用的是ln命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln f1 f1 #创建的是硬链接</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-s</td>
+<td align="center">创建的是软连接</td>
+</tr>
+</tbody></table>
+<p><code>echo</code> 输入字符串，也可以输入到文件中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost home]# echo &#x27;hahahahhah&#x27;&gt;f1</span><br></pre></td></tr></table></figure>
+
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2></div><div class="post-copyright"><blockquote><p>原文作者: 环王环王环王</p><p>原文链接: <a href="https://suerta.github.io/2020/12/01/Linux基础知识/">https://suerta.github.io/2020/12/01/Linux基础知识/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2021/03/11/springBoot%E5%AD%A6%E4%B9%A0/" class="pre">springBoot学习</a><a href="/2020/06/01/Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/" class="next">Linux命令之压缩命令</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.5"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.5"></script><script>var gitalk = new Gitalk({
   clientID: '426c431ee9cd8ef937ef',
   clientSecret: '62225f544422c611c9796d80471ed3c98c0b8ef6',
   repo: 'Suerta.github.io',
@@ -10,7 +156,7 @@
   language: 'zh-CN',
   pagerDirection: 'last'
 })
-gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">linux文件系统</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/">Linux命令之压缩命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/Linux%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">Linux常用命令学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/11/springBoot%E5%AD%A6%E4%B9%A0/">springBoot学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/11/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Linux基础知识</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15px;">杂谈</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="null" title="山烟俱尽" target="_blank">山烟俱尽</a><ul></ul><a href="null" title="青山如是" target="_blank">青山如是</a><ul></ul><a href="https://www.yhdmk.com/" title="啥都没有" target="_blank">啥都没有</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">环王环王环王.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85yum"><span class="toc-text">安装yum</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85CentOS%EF%BC%88%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%EF%BC%89"><span class="toc-text">安装CentOS（在本地安装）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">linux文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0"><span class="toc-text">Linux的账号管理学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%EF%BC%9ALinux-%E9%93%BE%E6%8E%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">拓展：Linux 链接的概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/Linux%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">Linux常用命令学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/11/springBoot%E5%AD%A6%E4%B9%A0/">springBoot学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Linux基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/01/Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/">Linux命令之压缩命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15px;">杂谈</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="null" title="山烟俱尽" target="_blank">山烟俱尽</a><ul></ul><a href="null" title="青山如是" target="_blank">青山如是</a><ul></ul><a href="https://www.yhdmk.com/" title="啥都没有" target="_blank">啥都没有</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">环王环王环王.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "//hm.baidu.com/hm.js?f297597bb6869d95a387422bebf98997";

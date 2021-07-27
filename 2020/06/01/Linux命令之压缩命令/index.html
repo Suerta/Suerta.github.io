@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人博客，记录学习技术的过程以及心得，不时记录阶段感悟。"><meta name="keywords" content="suerta"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.5"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.5"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.5"><title>Linux命令之压缩命令 | 此日无事</title><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux命令之压缩命令</h1><a id="logo" href="/.">此日无事</a><p class="description">我与往事归于尽，来年依旧迎花开。</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux命令之压缩命令</h1><div class="post-meta"><a href="/2020/06/01/Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/#comments" class="comment-count"></a><p><span class="date">2020/06/01</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="Linux命令之压缩命令"><a href="#Linux命令之压缩命令" class="headerlink" title="Linux命令之压缩命令"></a>Linux命令之压缩命令</h2><h4 id="一、gzip-gz"><a href="#一、gzip-gz" class="headerlink" title="一、gzip[.gz]"></a>一、gzip[.gz]</h4><p>压缩后的格式：*.gz</p>
+<blockquote>
+<p>解压1：<strong>gunzip</strong> FileName.gz</p>
+<p>解压2：gzip -d FileName.gz</p>
+<p>压缩：gzip FileName</p>
+</blockquote>
+<h4 id="二、tar-tar-gz-tgz"><a href="#二、tar-tar-gz-tgz" class="headerlink" title="二、tar[.tar.gz/.tgz]"></a>二、tar[.tar.gz/.tgz]</h4><table>
+<thead>
+<tr>
+<th align="center">命令选项</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-z(gzip)</td>
+<td align="center">用gzip来压缩/解压缩文件</td>
+</tr>
+<tr>
+<td align="center">-j(bzip2)</td>
+<td align="center">用bzip2来压缩/解压缩文件</td>
+</tr>
+<tr>
+<td align="center">-v(verbose)</td>
+<td align="center">详细报告tar处理的文件信息</td>
+</tr>
+<tr>
+<td align="center">-c(create)</td>
+<td align="center">创建新的档案文件</td>
+</tr>
+<tr>
+<td align="center">-x(extract)</td>
+<td align="center">解压缩文件或目录</td>
+</tr>
+<tr>
+<td align="center">-f(file)</td>
+<td align="center">使用档案文件或设备，这个选项通常是必选的.</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>解包：tar zxvf FileName.tar</p>
+<p>打包：tar czvf FileName.tar DirName</p>
+</blockquote>
+<p><font style="color:red">应用场景：将mnt目录下的文件解压到home目录下</font></p>
+<blockquote>
+<p>tar zxvf fileName.tar -C /home/</p>
+</blockquote>
+<p>对于.tar.gz/.tgz</p>
+<blockquote>
+<p>解压：tar zxvf FileName.tar.gz</p>
+<p>压缩：tar zcvf FileName.tar.gz DirName</p>
+<p>压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …</p>
+</blockquote>
+<h4 id="三、zip-zip-z"><a href="#三、zip-zip-z" class="headerlink" title="三、zip[.zip/.z]"></a>三、zip[.zip/.z]</h4><p>与gzip相比：1）可以压缩目录； 2）可以保留原文件；</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令选项</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-r(recursive)</td>
+<td align="center">递归压缩目录内的所有文件和目录</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>解压：unzip FileName.zip</p>
+<p>压缩：zip -r FileName.zip DirName</p>
+</blockquote>
+<p><font style="color:red">应用场景：将mnt目录下的文件解压到home目录下</font>这儿需要注意的是，和tar不同，用的是-d，而tar用的是-C.</p>
+<blockquote>
+<p>解压：unzip /mnt/fileName.zip -d /home/</p>
+</blockquote>
+<p>Z命令：</p>
+<blockquote>
+<p>解压：uncompress FileName.Z</p>
+<p>压缩：compress FileName</p>
+</blockquote>
+<p>.tar.z命令：</p>
+<blockquote>
+<p>解压：tar zxvf FileName.tar.z</p>
+<p>压缩：tar zcvf FileName.tar.z DirName</p>
+</blockquote>
+<h4 id="四、bzip2-bz2-bz-tar-bz"><a href="#四、bzip2-bz2-bz-tar-bz" class="headerlink" title="四、bzip2[.bz2/.bz/.tar.bz]"></a>四、bzip2[.bz2/.bz/.tar.bz]</h4><p>压缩后的格式：.bz2</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令选项</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-k</td>
+<td align="center">产生压缩文件后保留原文件</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>解压1：bzip2 -d FileName.bz2</p>
+<p>解压2：bunzip2 FileName.bz2</p>
+<p>压缩： bzip2 -z FileName</p>
+</blockquote>
+<p>.tar.bz2命令</p>
+<blockquote>
+<p>解压：tar jxvf FileName.tar.bz2</p>
+<p>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+</blockquote>
+<p>bz命令</p>
+<blockquote>
+<p>解压1：bzip2 -d FileName.bz</p>
+<p>解压2：bunzip2 FileName.bz</p>
+<p>压缩：未知</p>
+</blockquote>
+<p>.tar.bz命令</p>
+<blockquote>
+<p>解压：tar jxvf FileName.tar.bz</p>
+</blockquote>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>对于压缩后缀中有tar的，解压和压缩命令都是(z/j)xvf或 (z/j)cvf</p>
+<blockquote>
+<p>压缩：tar zxvf FileName.tar.* 或   tar jxvf FileName.tar.*</p>
+<p>解压：tar zcvf FileName.tar.*  或  tar jcvf FileName.tar.*</p>
+</blockquote>
+<p>对于压缩后缀中没有tar的，但是是zip的不同类型，解压命令都是＋un/-d，除了zip，如下：</p>
+<blockquote>
+<p>zip: unzip FileName.zip 或者 zip -r FileName.zip</p>
+<p>gzip: gunzip FileName.gz 或者 gzip -d FileName.gz</p>
+<p>bzip: bunzip FileName.bz 或者 bzip -d FileName.bz</p>
+</blockquote>
+</div><div class="post-copyright"><blockquote><p>原文作者: 环王环王环王</p><p>原文链接: <a href="https://suerta.github.io/2020/06/01/Linux命令之压缩命令/">https://suerta.github.io/2020/06/01/Linux命令之压缩命令/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="pre">Linux基础知识</a><a href="/2019/12/01/hello-world/" class="next">Hello World</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.5"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.5"></script><script>var gitalk = new Gitalk({
+  clientID: '426c431ee9cd8ef937ef',
+  clientSecret: '62225f544422c611c9796d80471ed3c98c0b8ef6',
+  repo: 'Suerta.github.io',
+  owner: 'suerta',
+  admin: ['suerta'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux命令之压缩命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81gzip-gz"><span class="toc-text">一、gzip[.gz]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81tar-tar-gz-tgz"><span class="toc-text">二、tar[.tar.gz&#x2F;.tgz]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81zip-zip-z"><span class="toc-text">三、zip[.zip&#x2F;.z]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81bzip2-bz2-bz-tar-bz"><span class="toc-text">四、bzip2[.bz2&#x2F;.bz&#x2F;.tar.bz]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li></ol></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/Linux%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">Linux常用命令学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/11/springBoot%E5%AD%A6%E4%B9%A0/">springBoot学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/01/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Linux基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/01/Linux%E5%91%BD%E4%BB%A4%E4%B9%8B%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/">Linux命令之压缩命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15px;">杂谈</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="null" title="山烟俱尽" target="_blank">山烟俱尽</a><ul></ul><a href="null" title="青山如是" target="_blank">青山如是</a><ul></ul><a href="https://www.yhdmk.com/" title="啥都没有" target="_blank">啥都没有</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">环王环王环王.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f297597bb6869d95a387422bebf98997";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/search.json.js?v=2.0.5"></script><div id="fullscreen-img" class="hide"><span class="close"></span></div><script type="text/javascript" src="/js/imgview.js?v=2.0.5" async></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.5" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>
